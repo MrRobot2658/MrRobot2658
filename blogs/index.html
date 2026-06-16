@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Lei Wang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #161922;
+      --surface-2: #1e212b;
+      --text: #f3f5f9;
+      --text-muted: #a2a8b8;
+      --accent: #3b82f6;
+      --accent-2: #8b5cf6;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: rgba(15,17,21,0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    .nav-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-inner a.back {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-inner a.back:hover { color: var(--text); }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 64px 24px 100px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 48px;
+    }
+
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      border-color: rgba(59,130,246,0.25);
+    }
+
+    .post-card .date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .post-card h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .post-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .post-card .read-more {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .post-card .read-more:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 60px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        Back to Home
+      </a>
+      <span style="font-weight: 600;">Blog</span>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Lei's <span>Blog</span></h1>
+    <p class="subtitle">Notes on AI, data infrastructure, and intelligent systems.</p>
+
+    <div class="post-list">
+      <article class="post-card">
+        <div class="date">June 16, 2026</div>
+        <h2>SmartInfra: Giving Kubernetes a Business-Aware Brain</h2>
+        <p>Why CPU-based autoscaling is no longer enough, and how SmartInfra adds an AI-driven intelligence layer on top of Rancher to scale infrastructure by business signals.</p>
+        <a href="smartinfra.html" class="read-more">Read article →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="date">June 16, 2026</div>
+        <h2>AgenticDataHub: An Intelligent Real-Time Data Foundation</h2>
+        <p>A real-time CDP with native AI agents: OneID unification, natural-language segmentation, and a secure MCP bridge that lets LLMs operate on data without writing raw SQL.</p>
+        <a href="agenticdatahub.html" class="read-more">Read article →</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>© Lei Wang · Thoughts on building AI-native infrastructure.</p>
+  </footer>
+</body>
+</html>
