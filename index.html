@@ -48,8 +48,48 @@
       padding: 0 24px;
     }
 
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: rgba(15,17,21,0.7);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .nav-inner .brand {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
     header {
-      padding: 72px 0 48px;
+      padding: 112px 0 48px;
       background: linear-gradient(180deg, rgba(59,130,246,0.08) 0%, transparent 100%);
       border-bottom: 1px solid var(--border);
     }
@@ -315,6 +355,16 @@
   </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="brand">Lei Wang</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="blogs/agenticdatahub.html">Blog</a>
+      </div>
+    </div>
+  </nav>
+
   <header>
     <div class="container hero">
       <div>
